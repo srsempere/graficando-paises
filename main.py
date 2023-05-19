@@ -34,7 +34,10 @@ with open('data.csv') as csvfile:
 
         dict_population[row['Country']] = [(year, row[f'{year} Population']) for year in [2022, 2020, 2015, 2010, 2000, 1990, 1980, 1970]]  # usar lista por descomprensión?
 
-    print(dict_population['Jordan'])
+    # Recogida del país a buscar
+
+    pais_busqueda = input('Introduce el nombre del país del cuál desear imprimir su gráfico => ')
+    print(dict_population[pais_busqueda])
 
 
 
