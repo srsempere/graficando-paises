@@ -37,8 +37,19 @@ with open('data.csv') as csvfile:
     # Recogida del país a buscar
 
     pais_busqueda = input('Introduce el nombre del país del cuál desear imprimir su gráfico => ')
-    print(dict_population[pais_busqueda])
 
+    fila_encontrada = dict(dict_population[pais_busqueda])
 
+    # Extracción de claves y valores
+
+    key_anyo = fila_encontrada.keys()
+    values_population = fila_encontrada.values()
+
+    print(fila_encontrada)
+    print(type(fila_encontrada))
+    print(fila_encontrada.keys())
+    print(fila_encontrada.values())
 
 # Creación de gráficos.
+
+    generate_bar_chart(key_anyo, values_population)
