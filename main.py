@@ -1,4 +1,16 @@
 import csv
+import matplotlib.pyplot as plt
+
+###################
+###  FUNCIONES  ###
+###################
+
+def generate_bar_chart(labels, values):
+    fig, ax = plt.subplots()
+    ax.bar(labels, values)
+    plt.show()
+
+######################
 
 # Leer el archivo.
 with open('data.csv') as csvfile:
@@ -8,8 +20,10 @@ with open('data.csv') as csvfile:
 
     # Recorro el diccionario accediendo por las claves correspondientes a la población por años.
     for row in reader:
-        print(row['2022 Population'])
-        population_data = (row['2022 Population'], row['2020 Population'], row['2015 Population'], row['2010 Population'], row['2000 Population'], row['1990 Population'], row['1980 Population'], row['1970 Population'])
+        population_data = [(row['Country'], ((2022, row['2022 Population']), (2020, row['2020 Population']), (2015, row['2015 Population']), (2010, row['2010 Population']), (2000, row['2000 Population']), (1990, row['1990 Population']), (1980, row['1980 Population']), (1970, row['1970 Population'])))]
+        # print(population_data)
+        dict_population = {dict(population_data)}
+        print(dict_population)
 
-    # Desempaqueto posicionalmente cada elemento de la tupla en su variable correspondiente.
-    year_2022, year_2020, year_2015, year_2010, year_2000, year_1990, year_1980, year_1970 = population_data
+
+# Creación de gráficos.
