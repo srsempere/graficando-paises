@@ -1,0 +1,5 @@
+PROYECTO FINAL
+
+De todo el csv, seleccionar un pais y de esa fila solo quiero las columnas que tengan que ver con los años (población por años).
+
+Cada fila del CSV tiene ya un formato de diccionario, donde las claves es el nombre de la columna y su correspondiente valor.
